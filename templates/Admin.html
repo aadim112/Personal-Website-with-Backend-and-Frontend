@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <title>Admin</title>
+    </head>
+
+    <link rel="stylesheet" href="/static/style3.css">
+    <link rel="stylesheet" href="style3.css">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <body onload="onloadd()" id="body">
+        <div class="bar">
+            
+        </div>
+
+        <p style="color: white;font-family:poppins;margin-left:30px;margin-top:30px">Tech Stack</p>
+        <div class="TechStack">
+            <form method="post" action="">
+                <input type="text" placeholder="Logo url" name="logourl">
+                <br>
+                <input type="text" placeholder="Heading" name="heading">
+                <br>
+                <input type="text" placeholder="Information" name="info">
+                <br>
+                <input type="submit">
+            </form>
+        </div>
+
+        <p style="color: white;font-family:poppins;margin-left:30px;margin-top:30px">Project cards</p>
+        <div class="TechStack2">
+            <form action="{{url_for('ProjectCards')}}" method="POST">
+                <input type="text" placeholder="Add Image for website" name="url">
+                <br>
+                <input type="text" placeholder="heading" name="heading">
+                <br>
+                <input type="text" placeholder="information" name="info">
+                <br>
+                <input type="text" placeholder="github link" name="gitlink">
+                <br>
+                <input type="text" placeholder="status" name="status">
+                <br>
+                <input type="submit">
+            </form>
+        </div>
+
+        <p style="color: white;font-family:poppins;margin-left:30px;margin-top:30px">Messages</p>
+        <div class="TechStack3">
+            <div style="height: 20px;width:100%;"></div>
+            {% for i in Contact %}
+            <div class="message">
+                <div style="height: 50px;width:100%;"></div>
+                <p>{{i.name}}</p>
+                <p>{{i.email}}</p>
+                <p>{{i.phoneNo}}</p>
+                <p>{{i.Label}}</p>
+                <p>{{i.qry}}</p>
+                <div style="height: 20px;width:100%;"></div>
+            </div>
+            {% endfor %}
+            <div style="height: 50px;width:100%;"></div>
+        </div>
+
+        <p style="color: white;font-family:poppins;margin-left:30px;margin-top:30px">Hire Me</p>
+        <div class="TechStack3">
+            <div style="height: 50px;width:100%;"></div>
+            {% for i in hire %}
+            <div class="message">
+                <div style="height: 20px;width:100%;"></div>
+                <p>Name : {{i.name}}</p>
+                <p>Company Name :{{i.companyName}}</p>
+                <p>MobNo : {{i.MobNo}}</p>
+                <p>Email : {{i.Email}}</p>
+                <p>Website Type : {{i.websitetype}}</p>
+                <p>Label : {{i.Label}}</p>
+                <div style="height: 20px;width:100%;"></div>
+            </div>
+            <div style="height: 50px;width:100%;"></div>
+            {% endfor %}
+        </div>
+
+
+        <p style="color: white;font-family:poppins;margin-left:30px;margin-top:30px">Thumbnail Images</p>
+        <div class="TechStack2">
+            <form action="{{url_for('thumbnailImage')}}" method="POST">
+                <input type="text" placeholder="Url 1" name="img1">
+                <br>
+                <input type="text" placeholder="url 2 " name="img2">
+                <br>
+                <input type="text" placeholder="Url 3" name="img3">
+                <br>
+                <input type="submit">
+            </form>
+        </div>
+
+        <p style="color: white;font-family:poppins;margin-left:30px;margin-top:30px">Plan 1</p>
+        <div class="TechStack2">
+            <form action="{{url_for('plan1')}}" method="POST">
+                <input type="text" placeholder="Price" name="price1">
+                <br>
+                <input type="text" placeholder="Web Type" name="type1">
+                <br>
+                <input type="text" placeholder="Web Type" name="type2">
+                <br>
+                <input type="text" placeholder="Profit 1" name="pr1">
+                <br>
+                <input type="text" placeholder="Profit 2" name="pr2">
+                <br>
+                <input type="text" placeholder="Profit 3" name="pr3">
+                <br>
+                <input type="text" placeholder="Profit 4" name="pr4">
+                <br>
+                <input type="submit">
+            </form>
+        </div>
+
+        <p style="color: white;font-family:poppins;margin-left:30px;margin-top:30px">Plan 2</p>
+        <div class="TechStack2">
+            <form action="{{url_for('plan2')}}" method="POST">
+                <input type="text" placeholder="Price" name="price2">
+                <br>
+                <input type="text" placeholder="Web Type" name="type1">
+                <br>
+                <input type="text" placeholder="Web Type" name="type2">
+                <br>
+                <input type="text" placeholder="Profit 1" name="pr1">
+                <br>
+                <input type="text" placeholder="Profit 2" name="pr2">
+                <br>
+                <input type="text" placeholder="Profit 3" name="pr3">
+                <br>
+                <input type="text" placeholder="Profit 4" name="pr4">
+                <br>
+                <input type="submit">
+            </form>
+        </div>
+
+        <p style="color: white;font-family:poppins;margin-left:30px;margin-top:30px">Manage Sites</p>
+        <div class="TechStack4">
+            {% for i in pcards %}
+                <div style="width: 600px;height:100px;margin-left:50px;display:flex;justify-content:center;align-items:center;margin-top:20px;">
+                    <form method="POST" action="{{ url_for('deleteData',heading = i.heading) }}" style="display: flex;align-items:center;justify-content:center">
+                        <p style="font-family: poppins;color:white">{{i.heading}}</p>
+                        <input type="submit" value="Delete" style="margin-left: 40px;">
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+    <script>
+        
+    </script>
+</html>

@@ -1,0 +1,311 @@
+<html>
+    <head>
+        <title>Aadi.WebDev</title>
+        <link rel="stylesheet" href="/static/style.css">
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+
+    </head>
+    <body class="body" id="body">
+
+        <div class="floating" id="pop">
+            <i class="fa-solid fa-xmark fa-xl" style="color: #ffffff;margin-left:30px;margin-top:30px;cursor:pointer" onclick="closePopup()"></i>
+            <div class="hirebox">
+                <div class="lefthire">
+                    <div class="frame"></div>
+                </div>
+                <div class="form">
+                    <h2 style="color: white;font-family:poppins">Hire Me</h2>
+                    <form method="POST" action="{{url_for('HireMe')}}">
+                        <input type="text" placeholder="Name" name="name">
+                        <br>
+                        <input type="text" placeholder="Company name" name="companyName">
+                        <br>
+                        <input type="number" placeholder="Mob No." maxlength="10" name="mobNo">
+                        <br>
+                        <input type="email" placeholder="Email" name="email">
+                        <br>
+                        <input type="text" placeholder="Type of Website" required name="type">
+                        <br>
+                        <button type="submit" class="but">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="start-container">
+
+            <!--------This si the left are of top container-->
+            <div class="top-left">
+                <div class="ltop-intro">
+                    <p>Grow your work with our WEBSITE created uniqely for you.</p>
+                    <div class="hire" onclick="floating()">
+                        Hire Me
+                        <i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i></div>
+                </div>
+
+                <div class="cards">
+                    <div class="cardone">
+                        <h2>+2</h2>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="cardtwo">
+                        <h2>+10</h2>
+                        <p>Projects Handled</p>
+                    </div>
+                    <div class="cardthree">
+                    </div>
+                    <div class="cardfour"></div>
+                </div>
+            </div>
+
+            <!-------This is the Right area of the container-->
+            <div class="top-right">
+                <div class="bar">
+                    <a href="#section3" style="text-decoration:none;color:white"><p>ABOUT</p></a>
+                    <a href="#section2" style="text-decoration:none;color:white"><p>PORTFOLIO</p></a>
+                    <a href="#contact-us" style="text-decoration:none;color:white"><p>CONTACT</p></a>
+                    <a href="{{url_for('Admin')}}" style="text-decoration:none;color:white;display:flex;align-items:center;justify-content:center;" onclick="auth()" id="admin"><p>Admin</p><i class="fa-solid fa-lock" style="color: #ffffff;margin-left:10px"></i></a>
+                </div>
+
+                <div class="moreinfo">
+                    <div class="profilephoto"></div>
+                    <div class="info-panal">
+                        <div class="name">
+                            <p>Name :</p>
+                            <p>Aaditya P.</p>
+                        </div>
+                        <div class="social-media">
+                            <a href="https://www.linkedin.com/in/aditya-p-5bb91625a/"><i class="fa-brands fa-linkedin-in fa-xl" style="color:white" ></i></a>
+                            <a href="https://www.instagram.com/heyy.aadi_m/"><i class="fa-brands fa-instagram fa-xl" style="color: #ffffff;"></i></a>
+                            <i class="fa-brands fa-twitter fa-xl" style="color: #ffffff;"></i>
+                            <a href="https://github.com/aadim112"><i class="fa-brands fa-github fa-xl" style="color: #ffffff;"></i></a>
+                        </div>
+                        <div class="aboutme">
+                            <p>About Me</p>
+                            <h3>Hello there,
+                                I am Aaditya P. I am a fullstack devloper with experience of more than 2 Years in website designing. 
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section2" id="section2">
+            <div class="secoundleft">
+                <div style="width: 100%;height:auto;display:flex;justify-content:space-between;align-items:center">
+                    <span style="color: white;font-family:poppins;padding:20px 20px 0px;font-weight: bolder;">Website Portfolio</span>
+                    <a href="{{ url_for('seeall') }}" style="text-decoration: none;"><span style="color: white;font-family:Poppins;padding:20px 20px 0px 0px;">See All</span></a>
+                </div>
+
+                <div class="box">
+                    <div class="box2" id="box2" style="background-image: url('{{img2}}');">
+                        <div class="boxblack" >
+                            <p style="color: white">Read More</p>
+                        </div>
+                    </div>
+
+                    <div class="box1" id="box1" style="background-image: url('{{img1}}');">
+                        <div class="boxblack">
+                            <p style="color: white">Read More</p>
+                        </div>
+                    </div>
+
+                    <div class="box3" id="box3" style="background-image: url('{{img3}}');">
+                        <div class="boxblack">
+                            <p style="color: white">Read More</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="secoundright">
+                <div style="width: 100%;height:50px;display:flex;justify-content:space-between;align-items:center">
+                    <h3 style="color: white;font-family:Poppins;padding:20px 20px 0px">Tech Stack</h3>
+                </div>
+
+                <div class="techcontainer">
+
+                    <div class="tech-box">
+                        <i class="fa-brands fa-html5 fa-2xl" style="color: #ff7300;"></i>
+                        <div class="tech-box-info">
+                            <h3>HTML</h3>
+                            <p>I have a very deep knowledege about HTMl and won various certificates. Accourding to me it is very necessary to know the basic about html.</p>
+                        </div>
+                        <i class="fa-solid fa-paperclip fa-lg" style="color: #ffffff;"></i>
+                    </div>
+
+                    <div class="tech-box">
+                        <i class="fa-brands fa-css3-alt fa-2xl" style="color: #1c9bfd;"></i>
+                        <div class="tech-box-info">
+                            <h3>CSS</h3>
+                            <p>I have a very deep knowledege about HTMl and won various certificates. Accourding to me it is very necessary to know the basic about html.</p>
+                        </div>
+                        <i class="fa-solid fa-paperclip fa-lg" style="color: #ffffff;"></i>
+                    </div>
+
+                    <div class="tech-box">
+                        <i class="fa-brands fa-js fa-2xl" style="color: #FFD43B;"></i>
+                        <div class="tech-box-info">
+                            <h3>JavaScript</h3>
+                            <p>I have a very deep knowledege about HTMl and won various certificates. Accourding to me it is very necessary to know the basic about html.</p>
+                        </div>
+                        <i class="fa-solid fa-paperclip fa-lg" style="color: #ffffff;"></i>
+                    </div>
+
+                    <div class="tech-box">
+                        <i class="fa-brands fa-react fa-2xl" style="color: #74C0FC;"></i>
+                        <div class="tech-box-info">
+                            <h3>React</h3>
+                            <p>I have a very deep knowledege about HTMl and won various certificates. Accourding to me it is very necessary to know the basic about html.</p>
+                        </div>
+                        <i class="fa-solid fa-paperclip fa-lg" style="color: #ffffff;"></i>
+                    </div>
+
+                    <div class="tech-box">
+                        <i class="fa-brands fa-python fa-2xl" style="color: #ffffff;"></i>
+                        <div class="tech-box-info">
+                            <h3>Python Flask</h3>
+                            <p>I have a very deep knowledege about HTMl and won various certificates. Accourding to me it is very necessary to know the basic about html.</p>
+                        </div>
+                        <i class="fa-solid fa-paperclip fa-lg" style="color: #ffffff;"></i>
+                    </div>
+
+
+
+                    <div style="height: 30px;"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section3" id="section3">
+           <div style="height: 30px;padding:20px;margin-left:20px;display:flex;justify-content:space-between;">
+            <span><span style="color: white;font-family:Poppins;padding:0px 5px 0px">Bringing Ideas</span><span style="color: rgb(179, 179, 179);font-family:Poppins;padding:0px 3px 0px">to Life</span></span>
+            <div class="toggles">
+                <div class="left-toggle"></div>
+                <div class="right-toggle"></div>
+            </div>
+           </div>
+           <h2 style="color: white;padding:0px 40px 0px;font-family:poppins">Why Us?</h2>
+           <p style="color: white;padding:0px 40px 0px;font-family:poppins">We are always engaged in creating and surving the best which suits your business.</p>
+           <p style="color: white;padding:0px 40px 0px;font-family:poppins">It's always our please to work people like and get the percious experience.</p>
+           <div></div>
+        </div>
+
+        <div class="plans">
+            <div class="plan-container">
+                <div style="margin-top:20px;margin-left:40px">
+                    <span style="color: white;font-family:Poppins;font-size:20px">Plans That Fit</span><span style="color: grey;font-family:Poppins;padding-left:8px;font-size:20px">Your Needs</span>
+                </div>
+                <p>Know the best plan fit for you & if dosen't then lets have a talk.</p>
+                <div class="plans-main">
+                    <div class="card1">
+                        <div class="label" id="label1">Basic</div>
+                        <div style="width: 100%;display:flex;justify-content:space-between;align-items:center"><h2 id="CardHeading1">Essentials</h2> <h2 style="margin-right:20px">₹ {{price1}}</h2></div>
+                        <p style="padding-left: 20px;color:white;font-family:Poppins;font-weight:lighter">Ideal For</p>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px" id="C1WebType1">{{p1typ1}}</li>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px" id="C1WebType2">{{p1type2}}</li>
+
+                        <h2>You will Get.</h2>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px" id="C1Profit1">{{p1profit1}}</li>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px" id="C1Profit2">{{p1profit2}}</li>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px" id="C1Profit3">{{p1profit3}}</li>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px" id="C1Profit4">{{p1profit4}}</li>
+                    </div>
+                    
+
+                    <div class="card1">
+                        <div class="label" id="label2">Best</div>
+                        <div style="width: 100%;display:flex;justify-content:space-between;align-items:center"><h2 id="CardHeading1">Growth</h2> <h2 style="margin-right:20px">₹ {{price2}}</h2></div>
+                        <p style="padding-left: 20px;color:white;font-family:Poppins;font-weight:lighter">Ideal For</p>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px" id="C2WebType1">{{p2typ1}}</li>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px" id="C2WebType2">{{p2type2}}</li>
+
+                        <h2>You will Get.</h2>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px" id="C2Profit1">{{p2profit1}}</li>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px" id="C2Profit2">{{p2profit2}}</li>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px" id="C2Profit3">{{p2profit3}}</li>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px" id="C2Profit4">{{p2profit4}}</li>
+                    </div>
+
+
+                    <div class="card1">
+                        <div class="label">Yours</div>
+                        <div style="width: 100%;display:flex;justify-content:space-between;align-items:center"><h2>All your Choice</h2></div>
+                        <p style="padding-left: 20px;color:white;font-family:Poppins;font-weight:lighter">Ideal For</p>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px">Any kind</li>
+
+                        <h2>You will Get.</h2>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px">Pages - 2x</li>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px">Custom Website Style</li>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px">VIP Service</li>
+                        <li style="padding-left: 20px;font-family:poppins;font-weight:lighter;color:white;font-size:12px">No Domain(You need to purchase)</li>
+                    </div>
+                </div>
+                <div style="height: 30px;"></div>
+            </div>
+        </div>
+
+        <div class="contact-us" id="contact-us">
+            <div class="svg-contact">
+                <h2 style="color: white;font-family:Poppins;padding:20px 30px 0px">Contact</h2>
+                <p style="color: white;font-family:Poppins;padding:20px 30px 0px">Please do contact us have any query.</p>
+                <div class="leftcontact">
+
+                </div>
+            </div>
+            <div class="right-contact">
+                <form method="POST" action="{{url_for('Simplecontact')}}">
+                    <h2 style="font-family: poppins;color:hsl(300deg 5.26% 11.18%)">Fill The Form To Contact Me.</h2>
+                    <div class="inputfield"><input type="text" placeholder="Name" style="font-family: Poppins" name="name" required><i class="fa-regular fa-address-card fa-lg" style="color: #ffffff;margin-right:20px;"></i></div>
+                    <div class="inputfield"><input type="email" placeholder="Email" style="font-family: Poppins" required name="email"></div>
+                    <div class="inputfield"><input type="text" placeholder="Phone Number" style="font-family: Poppins" maxlength="10" name="phone" required></div>
+                    <textarea class="textarea" placeholder="Query Here." name="query" required></textarea>
+                    <br>
+                    <input type="submit" class="submit">
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            ©copyright made by Aaditya Manish Patil.
+        </div>
+    </body>
+    <script>
+
+        function auth(){
+            var enteredPassword = prompt("Enter the password:");
+            var adminLink = document.getElementById('admin');
+
+
+            if(enteredPassword == 'A1492025@2005a'){
+                adminLink.href = "{{ url_for('Admin') }}";
+            }else{
+                adminLink.removeAttribute('href');
+                alert("Incorrect password! You don't have access to the admin site.");
+            }
+        }
+
+        function floating(){
+            document.getElementById('pop').classList.add('show');
+        };
+
+        function closePopup(){
+            document.getElementById('pop').classList.remove('show');
+        };
+    </script>
+</html>
